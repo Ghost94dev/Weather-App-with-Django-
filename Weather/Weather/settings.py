@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     os.getenv("RENDER_EXTERNAL_HOSTNAME", ""),
-    "weather-app-be37.onrender.com",
+    "weather-app-4j9l.onrender.com",
     ".onrender.com"]
 
 
