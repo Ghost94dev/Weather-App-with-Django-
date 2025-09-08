@@ -1,16 +1,16 @@
-services:
-  - type: web
-    name: Weather-app
+ - type: web
+    name: weather-app
     env: python
     plan: free
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
       python manage.py collectstatic --noinput
-      python manage.py migrate
-    startCommand: cd Weather && gunicorn Weather.wsgi:application --bind 0.0.0.0:$PORT --timeout 120 --workers 3
+    startCommand: gunicorn Weather.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: DEBUG
         value: "False"
       - key: SECRET_KEY
         generateValue: true
+      - key: My_API_KEY
+        value: 203cb5ca3150f4c78a8a2bf881c8c9fe
